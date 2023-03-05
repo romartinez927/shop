@@ -1,7 +1,6 @@
 import ItemDetail from '../ItemDetail/ItemDetail';
-import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 import { useFetch } from '../../useFetch';
+import { Link } from 'react-router-dom';
 
 export default function ItemListContainer() {
   const { data, loading } = useFetch("../../productos.json")
@@ -11,9 +10,14 @@ export default function ItemListContainer() {
         <div className='row'>
           <img src="./hands.png" alt="hands"/>
         </div>
-        <ItemDetail />
         <section>
-          <div className='text-center'>
+          <div className='text-center py-5'>
+            <h1>Featured.</h1>
+          </div>
+          {data && <ItemDetail producto={data[0]}/> }
+        </section>
+        <section>
+          <div className='text-center pt-5'>
             <h1>All collections.</h1>
             <p>summer memories and warm nostalgia</p>
           </div>
@@ -25,15 +29,19 @@ export default function ItemListContainer() {
                   data && data.filter(producto => producto.collection === "nostalgia").map((producto) => {
                       return (
                           <div className='d-flex flex-column card' key={producto.id} id={producto.id}>
-                          <img src={producto.img}/>
-                          <h5>{producto.nombre}</h5>
-                          <p>${producto.precio}</p>
-                      </div>
+                              <Link to={`../products/${producto.id}`} className='d-flex flex-column card'>
+                                  <img src={`.${producto.img}`} alt={producto.nombre}/>
+                                  <h5>{producto.nombre}</h5>
+                                  <p>${producto.precio}</p>
+                              </Link>
+                          </div>
                       )
                   })
                 }
             </div>
-            <button>View all</button>
+            <Link to="/collection/nostalgia" className='text-center py-5'>
+              <button className='btn btn-light'>View all</button>
+            </Link>
           </div>
           <div>
             <h4>basic collection.</h4>
@@ -43,15 +51,19 @@ export default function ItemListContainer() {
                   data && data.filter(producto => producto.collection === "basic").map((producto) => {
                       return (
                           <div className='d-flex flex-column card' key={producto.id} id={producto.id}>
-                          <img src={producto.img}/>
-                          <h5>{producto.nombre}</h5>
-                          <p>${producto.precio}</p>
-                      </div>
+                              <Link to={`../products/${producto.id}`} className='d-flex flex-column card'>
+                                  <img src={`.${producto.img}`} alt={producto.nombre}/>
+                                  <h5>{producto.nombre}</h5>
+                                  <p>${producto.precio}</p>
+                              </Link>
+                          </div>
                       )
                   })
                 }
             </div>
-            <button>View all</button>
+            <Link to="/collection/basic" className='text-center py-5'>
+              <button className='btn btn-light'>View all</button>
+            </Link>
           </div>
           <div>
             <h4>summer vibes collection.</h4>
@@ -61,15 +73,19 @@ export default function ItemListContainer() {
                   data && data.filter(producto => producto.collection === "summer").map((producto) => {
                       return (
                           <div className='d-flex flex-column card' key={producto.id} id={producto.id}>
-                          <img src={producto.img}/>
-                          <h5>{producto.nombre}</h5>
-                          <p>${producto.precio}</p>
-                      </div>
+                              <Link to={`../products/${producto.id}`} className='d-flex flex-column card'>
+                                  <img src={`.${producto.img}`} alt={producto.nombre}/>
+                                  <h5>{producto.nombre}</h5>
+                                  <p>${producto.precio}</p>
+                              </Link>
+                          </div>
                       )
                   })
                 }
             </div>
-            <button>View all</button>
+            <Link to="/collection/summer" className='text-center py-5'>
+              <button className='btn btn-light'>View all</button>
+            </Link>
           </div>
         </section>
       </main> 

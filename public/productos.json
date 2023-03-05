@@ -6,7 +6,10 @@
         "img":"./imagenes/card1.png", 
         "cantidad": 1,
         "categoria": "remeras",
-        "collection": "basic"
+        "collection": "basic",
+        "color": "black",
+        "description": "No better vibe, than the Summer Vibe! Best outfit to listen to Rammor Music!. Choose this unisex fleece hoodie and enjoy all it has to offer. It's soft, comfy, and can be easily styled with a pair of jeans and sneakers for a cozy, yet stylish look.",
+        "disponible": true
     },
     {
         "id": 2, 
@@ -15,7 +18,10 @@
         "img": "./imagenes/card2.jpeg", 
         "cantidad": 1,
         "categoria": "remeras",
-        "collection": "basic"
+        "collection": "basic",
+        "color": "brown",
+        "description": "No better vibe, than the Summer Vibe! Best outfit to listen to Rammor Music!. Choose this unisex fleece hoodie and enjoy all it has to offer. It's soft, comfy, and can be easily styled with a pair of jeans and sneakers for a cozy, yet stylish look.",
+        "disponible": true
     },
     
     {
@@ -25,7 +31,10 @@
         "img": "./imagenes/card3.jpeg", 
         "cantidad": 1,
         "categoria": "remeras",
-        "collection": "summer"
+        "collection": "summer",
+        "color": "grey",
+        "description": "No better vibe, than the Summer Vibe! Best outfit to listen to Rammor Music!. Choose this unisex fleece hoodie and enjoy all it has to offer. It's soft, comfy, and can be easily styled with a pair of jeans and sneakers for a cozy, yet stylish look.",
+        "disponible": true
     },
     {
         "id": 4, 
@@ -34,7 +43,9 @@
         "img": "./imagenes/card4.jpeg", 
         "cantidad": 1,
         "categoria": "shorts",
-        "collection": "summer"
+        "color": "black",
+        "collection": "summer",
+        "disponible": true
     },
     {
         "id": 5, 
@@ -43,7 +54,9 @@
         "img": "./imagenes/card5.jpeg", 
         "cantidad": 1,
         "categoria": "shorts",
-        "collection": "nostalgia"
+        "color": "blue",
+        "collection": "nostalgia",
+        "disponible": true
     },
     {
         "id": 6, 
@@ -52,7 +65,9 @@
         "img":"./imagenes/card6.png", 
         "cantidad": 1,
         "categoria": "remeras",
-        "collection": "nostalgia"
+        "color": "grey",
+        "collection": "nostalgia",
+        "disponible": true
     },
     {
         "id": 7, 
@@ -61,7 +76,9 @@
         "img": "./imagenes/card7.png", 
         "cantidad": 1,
         "categoria": "shorts",
-        "collection": "basic"
+        "color": "black",
+        "collection": "basic",
+        "disponible": true
     },
     {
         "id": 8, 
@@ -71,7 +88,9 @@
         "img": "./imagenes/card8.jpeg", 
         "cantidad": 1,
         "categoria": "shorts",
-        "collection": "basic"
+        "color": "blue",
+        "collection": "basic",
+        "disponible": true
     },       
     {
         "id": 9, 
@@ -80,7 +99,9 @@
         "img": "./imagenes/card9.jpeg", 
         "cantidad": 1,
         "categoria": "camperas",
-        "collection": "nostalgia"
+        "color": "black",
+        "collection": "nostalgia",
+        "disponible": true
     },    
     {
         "id": 10,
@@ -89,7 +110,9 @@
         "img": "./imagenes/card10.jpeg", 
         "cantidad": 1,
         "categoria": "camperas",
-        "collection": "nostalgia"
+        "color": "grey",
+        "collection": "nostalgia",
+        "disponible": true
     },   
     {
         "id": 11,
@@ -98,7 +121,9 @@
         "img": "./imagenes/card11.jpeg", 
         "cantidad": 1,
         "categoria": "camperas",
-        "collection": "summer"
+        "color": "white",
+        "collection": "summer",
+        "disponible": true
     },
     {
         "id": 12,
@@ -107,38 +132,52 @@
         "img": "./imagenes/card13.jpeg", 
         "cantidad": 1,
         "categoria": "pantalones",
-        "collection": "summer"
+        "color": "grey",
+        "collection": "summer",
+        "disponible": true
     },
     {
         "id": 13,
         "nombre": "Pantalón Juno",
         "precio": 2300, 
-        "img": "./img/1663852957_e93229704194ddb74bca2e6c53664272.140307.jpeg", 
+        "img": "./imagenes/card14.jpeg", 
         "cantidad": 1,
-        "categoria": "pantalones"
+        "categoria": "pantalones",
+        "color": "black",
+        "collection": "summer",
+        "disponible": true
     },
     {
         "id": 14,
         "nombre": "Jean Celeste",
         "precio": 2300, 
-        "img": "./img/1602644082_dcc1aeefaccb277b0be55388a669cabb.140307.jpeg", 
+        "img": "./imagenes/card15.jpeg", 
         "cantidad": 1,
-        "categoria": "pantalones"
+        "categoria": "pantalones",
+        "color": "blue",
+        "collection": "summer",
+        "disponible": true
     },
     {
         "id": 15,
         "nombre": "Jean Negro",
         "precio": 2300,  
-        "img": "./img/1664812945_0eff03dff3733e39c399b31dd8434b56.140307.jpeg", 
+        "img": "./imagenes/card16.jpeg", 
         "cantidad": 1,
-        "categoria": "pantalones"
+        "categoria": "pantalones",
+        "color": "black",
+        "collection": "nostalgia",
+        "disponible": true
     },
     {
         "id": 16,
         "nombre": "Jean Azul",
         "precio": 2300,  
-        "img": "./img/1633118894_7bc837846380f6a31d78ec3f35f643ce.140307.jpeg", 
+        "img": "./imagenes/card17.jpeg", 
         "cantidad": 1,
-        "categoria": "pantalones"
+        "categoria": "pantalones",
+        "color": "blue",
+        "collection": "nostalgia",
+        "disponible": true
     }
 ]

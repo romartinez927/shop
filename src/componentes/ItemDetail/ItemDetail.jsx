@@ -1,23 +1,23 @@
-export default function ItemDetail(props) {
+export default function ItemDetail({producto}) {
     return (
-        <div>
-          <h1>Featured.</h1>
-          <div className='d-flex'>
-            <img src="./card.jpeg" className='tarjetita'/>
-            <div className='d-flex flex-column'>
-              <p>RAMMORSMERCH</p>
-              <h1>Summer Nostalgia Eco Sweatshirt White</h1>
-              <p>€45,99 EUR</p>
-              <p>size</p>
-              <div>
-                <button>S</button>
-                <button>M</button>
-                <button>L</button>
-                <button>XL</button>
-                <button>2XL</button>
-              </div>
-              <button>Add to cart</button>
+        <div className='d-flex row justify-content-center'>
+          <img src={`.${producto.img}`} className='tarjetita col-4' alt={producto.nombre}/>
+          <div className='d-flex flex-column col-4 gap-2'>
+            <p>RAMMORSMERCH</p>
+            <h1>{producto.nombre}</h1>
+            <p>${producto.precio}</p>
+            <p>Size guide</p>
+            <div>
+              <label for="size">Size</label>
+              <select>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+              </select>
             </div>
+            <button className="btn btn-light">Add to cart</button>
+            <p>{producto.description}</p>
           </div>
         </div>
     )

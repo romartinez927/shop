@@ -1,6 +1,4 @@
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
@@ -8,7 +6,7 @@ import {Link} from "react-router-dom"
 
 function NavBar() {
   return (
-    <Navbar key="lg" expand="lg">
+    <Navbar key="lg" expand="lg" className="border">
       <Container fluid>
         <Navbar.Brand>
           <Link to="/">
@@ -42,12 +40,12 @@ function NavBar() {
                 </Link>
                 <Link to ="/">
                   <span className="material-icons material-symbols-outlined">
-                    shopping_bag
+                    search
                   </span>
                 </Link>
                 <Link to ="/">
                   <span className="material-icons material-symbols-outlined">
-                    search
+                    shopping_bag
                   </span>
                 </Link>
             </Nav>

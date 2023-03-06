@@ -1,5 +1,5 @@
 import ItemDetail from '../ItemDetail/ItemDetail';
-import { useFetch } from '../../useFetch';
+import { useFetch } from '../../functions/useFetch';
 import { Link } from 'react-router-dom';
 
 export default function ItemListContainer() {

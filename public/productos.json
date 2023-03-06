@@ -90,7 +90,7 @@
         "categoria": "shorts",
         "color": "blue",
         "collection": "basic",
-        "disponible": true
+        "disponible": false
     },       
     {
         "id": 9, 
@@ -123,7 +123,7 @@
         "categoria": "camperas",
         "color": "white",
         "collection": "summer",
-        "disponible": true
+        "disponible": false
     },
     {
         "id": 12,
@@ -167,7 +167,7 @@
         "categoria": "pantalones",
         "color": "black",
         "collection": "nostalgia",
-        "disponible": true
+        "disponible": false
     },
     {
         "id": 16,

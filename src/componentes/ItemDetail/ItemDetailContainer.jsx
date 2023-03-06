@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import { useFetch } from "../../useFetch"
+import { useFetch } from "../../functions/useFetch"
 import { useEffect, useState } from "react"
 import ItemDetail from "./ItemDetail"
 

@@ -1,78 +1,40 @@
-import { useParams } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 import "./ItemCollection.css"
-import { useFetch } from "../../useFetch";
-import { Link } from "react-router-dom";
-import FilterButton from "../FilterButton/FilterButton";
-import { filterByLowerPrice, filterByHigherPrice } from "../../functions";
+import { useFetch } from "../../functions/useFetch";
+import { useEffect, useState } from "react";
+import { filterByLowerPrice, filterByHigherPrice, sortByAZ, sortByZA } from "../../functions/functions";
 
 export default function ItemsCollection() {
-    const { data, loading } = useFetch("../../productos.json")
+    let { data, loading } = useFetch("../../productos.json")
     const { collectionId } = useParams()
+    const [ filterParam, setFilterParam ] = useState("")
+    const [ available, setAvailable ] = useState("")
+    const [ color, setColor ] = useState("")
 
     let colleccion = collectionId.charAt(0).toUpperCase().concat(collectionId.substring(1, collectionId.length))
 
+    if (data) {
+        available === "out-stock" && (data = data.filter((producto) => producto.disponible === false))
+        available === "stock" && (data = data.filter((producto) => producto.disponible === true))
+    }
 
-    //SORT BY A-Z
-    // const az = () => {
-    // if (data) {
-    //         data.sort(function (a, b) {
-    //             if (a.nombre > b.nombre) {
-    //             return 1;
-    //             }
-    //             if (a.nombre < b.nombre) {
-    //             return -1;
-    //             }
-    //             // a must be equal to b
-    //             return 0;
-    //         });
-    //     }
-    // }
+    if (data) {
+        color === "black" && (data = data.filter((producto) => producto.color === "black"))
+        color === "white" && (data = data.filter((producto) => producto.color === "white"))
+        color === "blue" && (data = data.filter((producto) => producto.color === "blue"))
+        color === "grey" && (data = data.filter((producto) => producto.color === "grey"))
+    }
     
 
-    // SORT BY Z-A
-        // const za = () => {
-        //     if (data) {
-        //         data.sort(function (a, b) {
-        //             if (a.nombre < b.nombre) {
-        //               return 1;
-        //             }
-        //             if (a.nombre > b.nombre) {
-        //               return -1;
-        //             }
-        //             // a must be equal to b
-        //             return 0;
-        //           });
-        //     }
-        // }
-
-
-    // SORT BY LOW TO HIGH
-    //     if (data) {
-    //     data.sort(function (a, b) {
-    //         if (a.precio > b.precio) {
-    //           return 1;
-    //         }
-    //         if (a.precio < b.precio) {
-    //           return -1;
-    //         }
-    //         // a must be equal to b
-    //         return 0;
-    //       });
-    // }
-
-        // SORT BY HIGH TO LOW
-        // if (data) {
-        //     data.sort(function (a, b) {
-        //         if (a.precio < b.precio) {
-        //           return 1;
-        //         }
-        //         if (a.precio > b.precio) {
-        //           return -1;
-        //         }
-        //         // a must be equal to b
-        //         return 0;
-        //       });
-        // }
+    if (filterParam === "price-low") {
+        filterByLowerPrice(data)
+    } else if (filterParam === "price-high") {
+        filterByHigherPrice(data)
+    } else if (filterParam === "az") {
+        sortByAZ(data)
+    } else if (filterParam === "za") {
+        sortByZA(data)
+    }
 
     return (
         <div>
@@ -83,47 +45,36 @@ export default function ItemsCollection() {
                 <div>
                     <img className="item-collection-img" alt="florecitas" src="../hanekawa.png"/>
                 </div>
-
             </div>
             <div className="d-flex gap-3 align-items-center justify-content-center py-4">
                 <p className="my-auto">Filter:</p>
                 <div className="d-flex gap-5">
                     <select name="productType" id="productType">
                         <option value="type">Product Type</option>
-                        <option value="t-shirt">T-shirt</option>
+                        <option value="t-shirt">Remera</option>
                         <option value="short">Short</option>
                         <option value="jean">Jean</option>
                     </select>
-                    <select name="size" id="size">
-                        <option value="size">Size</option>
-                        <option value="s">S</option>
-                        <option value="m">M</option>
-                        <option value="l">L</option>
-                        <option value="xl">XL</option>
+                    <select name="colorType" id="colorType" onChange={(e) => setColor(e.target.value)}>
+                        <option value="color">All Colors</option>
+                        <option value="black">Black</option>
+                        <option value="white">White</option>
+                        <option value="grey">Grey</option>
+                        <option value="blue">Blue</option>
                     </select>
-                    <select name="avaliabity" id="avaliabity">
+                    <select name="avaliabity" id="avaliabity" onChange={(e) => setAvailable(e.target.value)}>
                         <option value="availability">Availability</option>
                         <option value="stock">In stock</option>
                         <option value="out-stock">Out of stock</option>
                     </select>
                     <label htmlFor="sortBy">Sort by:</label>
-                    <select name="sortBy" id="sortBy">
+                    <select name="sortBy" id="sortBy" onChange={(e) => setFilterParam(e.target.value)}>
                         <option value="featured">Featured</option>
                         <option value="az">Alphabetically, A-Z</option>
                         <option value="za">Alphabetically, Z-A</option> 
                         <option value="price-low">Price: low to high</option>
-                        <option value="price-high" onClick={() => filterByHigherPrice(data)}>Price: high to low</option>
+                        <option value="price-high">Price: high to low</option>
                     </select>
-                </div>
-                <div>
-                    <FilterButton name="in" value="In stock"/>
-                    <FilterButton name="out" value="Out of stock"/>
-                </div>
-                <div>
-                    <FilterButton name="black" onClick={() => filterByHigherPrice(data)} value="Black"/>
-                    <FilterButton name="white" value="White"/>
-                    <FilterButton name="grey" value="Grey"/>
-                    <FilterButton name="blue" value="Blue"/>
                 </div>
                 <p className="my-auto">
                     {data && data.filter(producto => producto.collection === collectionId).length + " products"}

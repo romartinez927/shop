@@ -43,7 +43,7 @@ function NavBar() {
                     search
                   </span>
                 </Link>
-                <Link to ="/">
+                <Link to ="/cart">
                   <span className="material-icons material-symbols-outlined">
                     shopping_bag
                   </span>

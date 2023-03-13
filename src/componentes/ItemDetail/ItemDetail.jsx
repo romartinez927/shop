@@ -1,3 +1,5 @@
+import ItemCount from "../ItemCount/ItemCount";
+
 export default function ItemDetail({producto}) {
     return (
         <div className='d-flex row justify-content-center'>
@@ -16,7 +18,7 @@ export default function ItemDetail({producto}) {
                 <option>XL</option>
               </select>
             </div>
-            <button className="btn btn-light">Add to cart</button>
+            <ItemCount />
             <p>{producto.description}</p>
           </div>
         </div>

@@ -1,6 +1,16 @@
-import ItemCount from "../ItemCount/ItemCount";
+import ItemCount from "../ItemCount/ItemCount"
+import { useContext } from "react"
+import { cartContext } from "../../storage/context"
+
 
 export default function ItemDetail({producto}) {
+    const { addToCart } = useContext(cartContext)
+
+    function handleAddToCart(cantidad) {
+        const productoAndCantidad = { ...producto, cantidad: cantidad}
+        addToCart(productoAndCantidad)
+    }
+
     return (
         <div className='d-flex row justify-content-center'>
           <img src={`.${producto.img}`} className='tarjetita col-4' alt={producto.nombre}/>
@@ -18,7 +28,7 @@ export default function ItemDetail({producto}) {
                 <option>XL</option>
               </select>
             </div>
-            <ItemCount />
+            <ItemCount onAddToCart={handleAddToCart}/>
             <p>{producto.description}</p>
           </div>
         </div>

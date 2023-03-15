@@ -4,17 +4,24 @@ import { useEffect, useContext } from "react"
 import { Link } from 'react-router-dom'
 
 function Cart() {
-    const {cart, setCart} = useContext(cartContext)
+    const {cart, setCart, getTotalPriceInCart} = useContext(cartContext)
 
     useEffect(() => {
-        const carrito = JSON.parse(localStorage.getItem("productosEnCarrito"))
+        const carrito = JSON.parse(localStorage.getItem("productosCarrito"))
         if (carrito) {
             setCart(carrito)
+            console.log(carrito)
         }
     }, [])
 
   return (
         <>
+            <div className='d-flex align-items-center justify-content-between p-4'>
+                <h1>Your Cart</h1>
+                <Link to="/">
+                    <p>Continue shopping</p>
+                </Link>
+            </div>
             <div className="container-fluid g-4 justify-content-around text-center py-3">
                 {cart.length > 0 ? (
                     cart.map((producto) => {
@@ -52,6 +59,10 @@ function Cart() {
                         </div>
                     </div>
                 )}
+            </div>
+            <div>
+                <p>Total: ${getTotalPriceInCart()}</p>
+                <button>Check out</button>
             </div>
         </>
   )

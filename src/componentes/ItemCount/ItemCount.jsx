@@ -17,7 +17,7 @@ function ItemCount({onAddToCart}) {
           <div className="col-3 p-1 d-flex justify-content-center my-auto btn-contador-container">
               <button className="btn-contador" disabled={cantidad === 0} onClick={handleSubstract}>-</button>
               <p className="px-3 my-auto">{cantidad}</p>
-              <button className="btn-contador"  onClick={handleAdd}>+</button>
+              <button className="btn-contador" onClick={handleAdd}>+</button>
           </div>
           <div className="col-7">
               <button className="btn-agregar-carrito p-2 col-12" disabled={cantidad === 0} onClick={() => onAddToCart(cantidad)}>

@@ -1,3 +1,7 @@
+.card-collection {
+    width: 16em;
+}
+
 .item-collection-img {
-    width: 30em;
+    max-width: 30em;
 }

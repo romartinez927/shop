@@ -80,13 +80,26 @@ export default function ItemsCollection() {
                     {data && data.filter(producto => producto.collection === collectionId).length + " products"}
                 </p>
             </div>
-            <div className='row row-cols-1 row-cols-md-2 g-4 justify-content-center text-center'>
+            <div className='d-flex flex-wrap gap-4 justify-content-center text-center'>
                 {loading && <li>Loading</li>}
                 {
                     data && data.filter(producto => producto.collection === collectionId).map((producto) => {
                         return (
                             <div key={producto.id} id={producto.id}>
-                                <Link to={`../products/${producto.id}`} className='d-flex flex-column card'>
+                                <Link to={`../products/${producto.id}`} className='d-flex flex-column card card-collection'>
+                                    <img src={`.${producto.img}`} alt={producto.nombre}/>
+                                    <h5>{producto.nombre}</h5>
+                                    <p>${producto.precio}</p>
+                                </Link>
+                            </div>
+                        )
+                    })
+                }
+                {
+                    data && colleccion == "All" && data.map((producto) => {
+                        return (
+                            <div key={producto.id} id={producto.id}>
+                                <Link to={`../products/${producto.id}`} className='d-flex flex-column card card-collection'>
                                     <img src={`.${producto.img}`} alt={producto.nombre}/>
                                     <h5>{producto.nombre}</h5>
                                     <p>${producto.precio}</p>

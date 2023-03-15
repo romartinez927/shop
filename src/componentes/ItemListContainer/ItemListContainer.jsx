@@ -1,6 +1,7 @@
 import ItemDetail from '../ItemDetail/ItemDetail';
 import { useFetch } from '../../functions/useFetch';
 import { Link } from 'react-router-dom';
+import ItemList from './ItemList';
 
 export default function ItemListContainer() {
   const { data, loading } = useFetch("../../productos.json")
@@ -21,72 +22,9 @@ export default function ItemListContainer() {
             <h1>All collections.</h1>
             <p>summer memories and warm nostalgia</p>
           </div>
-          <div>
-            <h4>summer nostalgia collection.</h4>
-            <div className='row row-cols-1 row-cols-md-2 g-4 justify-content-center text-center'>
-                {loading && <li>Loading</li>}
-                {
-                  data && data.filter(producto => producto.collection === "nostalgia").map((producto) => {
-                      return (
-                          <div className='d-flex flex-column card' key={producto.id} id={producto.id}>
-                              <Link to={`../products/${producto.id}`} className='d-flex flex-column card'>
-                                  <img src={`.${producto.img}`} alt={producto.nombre}/>
-                                  <h5>{producto.nombre}</h5>
-                                  <p>${producto.precio}</p>
-                              </Link>
-                          </div>
-                      )
-                  })
-                }
-            </div>
-            <Link to="/collection/nostalgia" className='text-center py-5'>
-              <button className='btn btn-light'>View all</button>
-            </Link>
-          </div>
-          <div>
-            <h4>basic collection.</h4>
-            <div className='row row-cols-1 row-cols-md-2 g-4 justify-content-center text-center'>
-                {loading && <li>Loading</li>}
-                {
-                  data && data.filter(producto => producto.collection === "basic").map((producto) => {
-                      return (
-                          <div className='d-flex flex-column card' key={producto.id} id={producto.id}>
-                              <Link to={`../products/${producto.id}`} className='d-flex flex-column card'>
-                                  <img src={`.${producto.img}`} alt={producto.nombre}/>
-                                  <h5>{producto.nombre}</h5>
-                                  <p>${producto.precio}</p>
-                              </Link>
-                          </div>
-                      )
-                  })
-                }
-            </div>
-            <Link to="/collection/basic" className='text-center py-5'>
-              <button className='btn btn-light'>View all</button>
-            </Link>
-          </div>
-          <div>
-            <h4>summer vibes collection.</h4>
-            <div className='row row-cols-1 row-cols-md-2 g-4 justify-content-center text-center'>
-                {loading && <li>Loading</li>}
-                {
-                  data && data.filter(producto => producto.collection === "summer").map((producto) => {
-                      return (
-                          <div className='d-flex flex-column card' key={producto.id} id={producto.id}>
-                              <Link to={`../products/${producto.id}`} className='d-flex flex-column card'>
-                                  <img src={`.${producto.img}`} alt={producto.nombre}/>
-                                  <h5>{producto.nombre}</h5>
-                                  <p>${producto.precio}</p>
-                              </Link>
-                          </div>
-                      )
-                  })
-                }
-            </div>
-            <Link to="/collection/summer" className='text-center py-5'>
-              <button className='btn btn-light'>View all</button>
-            </Link>
-          </div>
+          <ItemList collection="nostalgia" nombre="summer nostalgia"/>
+          <ItemList collection="basic" nombre="basic"/>
+          <ItemList collection="summer" nombre="summer vibes"/>
         </section>
       </main> 
     )

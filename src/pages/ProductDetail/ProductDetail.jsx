@@ -1,14 +1,17 @@
-import ItemCount from "../ItemCount/ItemCount"
+import ItemCount from "../../componentes/ItemCount/ItemCount"
 import { useContext } from "react"
 import { cartContext } from "../../storage/context"
 
 
-export default function ItemDetail({producto}) {
-    const { addToCart } = useContext(cartContext)
+export default function ProductDetail({producto}) {
+    const { addToCart, cart } = useContext(cartContext)
 
     function handleAddToCart(cantidad) {
         const productoAndCantidad = { ...producto, cantidad: cantidad}
+        // aca deberia hacer una funcion en la que me fije si está en el carrito
+        //de no estar en el carrito, hacer esto
         addToCart(productoAndCantidad)
+        //de estar en el carrito, hacer otra
     }
 
     return (
@@ -28,7 +31,7 @@ export default function ItemDetail({producto}) {
                 <option>XL</option>
               </select>
             </div>
-            <ItemCount onAddToCart={handleAddToCart}/>
+            <ItemCount cant={producto.cantidad} onAddToCart={handleAddToCart}/>
             <p>{producto.description}</p>
           </div>
         </div>

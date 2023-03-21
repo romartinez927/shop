@@ -26,6 +26,11 @@ function CartProvider(props) {
         }
     }
 
+    // function actualizarCantidad(producto) {
+    //     let item = cart.filter(item => item.id == producto.id)
+    //     return item.cantidad
+    // }
+
     function removeItem(producto) {
         const results = cart.filter(item => item.id !== producto.id)
         setCart(results)

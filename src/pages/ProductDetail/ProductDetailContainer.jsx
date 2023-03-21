@@ -1,9 +1,10 @@
 import { useParams } from "react-router-dom"
 import { useFetch } from "../../functions/useFetch"
 import { useEffect, useState } from "react"
-import ItemDetail from "./ItemDetail"
+import ProductDetail from "./ProductDetail"
 
-export default function ItemDetailContainer() {
+
+function ProductDetailContainer() {
     const { data, loading } = useFetch("../../productos.json")
     const { productId } = useParams()
     const [producto, setProducto] = useState("")
@@ -18,7 +19,9 @@ export default function ItemDetailContainer() {
     return (
         <div className="pt-5">
             {loading && <p>Loading</p>}
-            <ItemDetail producto={producto}/>
+            <ProductDetail producto={producto}/>
         </div>
     )
 }
+
+export default ProductDetailContainer

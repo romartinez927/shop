@@ -47,6 +47,7 @@ function NavBar() {
                   <span className="material-icons material-symbols-outlined">
                     shopping_bag
                   </span>
+                  <span className="badge bg-primary">2</span>
                 </Link>
             </Nav>
           </Offcanvas.Body>

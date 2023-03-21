@@ -1,10 +1,11 @@
 import { useParams, Link } from "react-router-dom"
-import "./ItemCollection.css"
+import "./Store.css"
 import { useFetch } from "../../functions/useFetch";
 import { useEffect, useState } from "react";
 import { filterByLowerPrice, filterByHigherPrice, sortByAZ, sortByZA } from "../../functions/functions";
 
-export default function ItemsCollection() {
+
+function Store() {
     let { data, loading } = useFetch("../../productos.json")
     const { collectionId } = useParams()
     const [ filterParam, setFilterParam ] = useState("")
@@ -112,3 +113,5 @@ export default function ItemsCollection() {
         </div>
     )
 }
+
+export default Store

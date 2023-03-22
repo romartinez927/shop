@@ -1,0 +1,167 @@
+[
+    {
+        "id": 1, 
+        "nombre": "Remera clásica", 
+        "precio": 1200,  
+        "img":"./imagenes/card1.png", 
+        "categoria": "remeras",
+        "collection": "basic",
+        "color": "black",
+        "description": "No better vibe, than the Summer Vibe! Best outfit to listen to Rammor Music!. Choose this unisex fleece hoodie and enjoy all it has to offer. It's soft, comfy, and can be easily styled with a pair of jeans and sneakers for a cozy, yet stylish look.",
+        "disponible": true
+    },
+    {
+        "id": 2, 
+        "nombre": "Top Roger", 
+        "precio": 1200,  
+        "img": "./imagenes/card2.jpeg", 
+        "categoria": "remeras",
+        "collection": "basic",
+        "color": "brown",
+        "description": "No better vibe, than the Summer Vibe! Best outfit to listen to Rammor Music!. Choose this unisex fleece hoodie and enjoy all it has to offer. It's soft, comfy, and can be easily styled with a pair of jeans and sneakers for a cozy, yet stylish look.",
+        "disponible": true
+    },
+    
+    {
+        "id": 3, 
+        "nombre": "Remera Gris",  
+        "precio": 1500,  
+        "img": "./imagenes/card3.jpeg", 
+        "categoria": "remeras",
+        "collection": "summer",
+        "color": "grey",
+        "description": "No better vibe, than the Summer Vibe! Best outfit to listen to Rammor Music!. Choose this unisex fleece hoodie and enjoy all it has to offer. It's soft, comfy, and can be easily styled with a pair of jeans and sneakers for a cozy, yet stylish look.",
+        "disponible": true
+    },
+    {
+        "id": 4, 
+        "nombre": "Short Delfi",
+        "precio": 2500,  
+        "img": "./imagenes/card4.jpeg", 
+        "categoria": "shorts",
+        "color": "black",
+        "collection": "summer",
+        "disponible": true
+    },
+    {
+        "id": 5, 
+        "nombre": "Short Calvin",  
+        "precio": 2300, 
+        "img": "./imagenes/card5.jpeg", 
+        "categoria": "shorts",
+        "color": "blue",
+        "collection": "nostalgia",
+        "disponible": true
+    },
+    {
+        "id": 6, 
+        "nombre": "Remera V",  
+        "precio": 1200,  
+        "img":"./imagenes/card6.png", 
+        "categoria": "remeras",
+        "color": "grey",
+        "collection": "nostalgia",
+        "disponible": true
+    },
+    {
+        "id": 7, 
+        "nombre": "Short Negro", 
+        "precio": 2100,  
+        "img": "./imagenes/card7.png", 
+        "categoria": "shorts",
+        "color": "black",
+        "collection": "basic",
+        "disponible": true
+    },
+    {
+        "id": 8, 
+        "nombre": "Short Azul", 
+        "precio": 2100, 
+        "stock": 100, 
+        "img": "./imagenes/card8.jpeg", 
+        "categoria": "shorts",
+        "color": "blue",
+        "collection": "basic",
+        "disponible": false
+    },       
+    {
+        "id": 9, 
+        "nombre": "Campera Negra", 
+        "precio": 2500, 
+        "img": "./imagenes/card9.jpeg", 
+        "categoria": "camperas",
+        "color": "black",
+        "collection": "nostalgia",
+        "disponible": true
+    },    
+    {
+        "id": 10,
+        "nombre": "Buzo Gris", 
+        "precio": 1300, 
+        "img": "./imagenes/card10.jpeg", 
+        "categoria": "camperas",
+        "color": "grey",
+        "collection": "nostalgia",
+        "disponible": true
+    },   
+    {
+        "id": 11,
+        "nombre": "Buzo Blanco", 
+        "precio": 2200,  
+        "img": "./imagenes/card11.jpeg", 
+        "categoria": "camperas",
+        "color": "white",
+        "collection": "summer",
+        "disponible": false
+    },
+    {
+        "id": 12,
+        "nombre": "Jogging rústico",
+        "precio": 1500, 
+        "img": "./imagenes/card13.jpeg", 
+        "categoria": "pantalones",
+        "color": "grey",
+        "collection": "summer",
+        "disponible": true
+    },
+    {
+        "id": 13,
+        "nombre": "Pantalón Juno",
+        "precio": 2300, 
+        "img": "./imagenes/card14.jpeg", 
+        "categoria": "pantalones",
+        "color": "black",
+        "collection": "summer",
+        "disponible": true
+    },
+    {
+        "id": 14,
+        "nombre": "Jean Celeste",
+        "precio": 2300, 
+        "img": "./imagenes/card15.jpeg", 
+        "categoria": "pantalones",
+        "color": "blue",
+        "collection": "summer",
+        "disponible": true
+    },
+    {
+        "id": 15,
+        "nombre": "Jean Negro",
+        "precio": 2300,  
+        "img": "./imagenes/card16.jpeg", 
+        "categoria": "pantalones",
+        "color": "black",
+        "collection": "nostalgia",
+        "disponible": false
+    },
+    {
+        "id": 16,
+        "nombre": "Jean Azul",
+        "precio": 2300,  
+        "img": "./imagenes/card17.jpeg", 
+        "categoria": "pantalones",
+        "color": "blue",
+        "collection": "nostalgia",
+        "disponible": true
+    }
+]

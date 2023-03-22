@@ -6,10 +6,10 @@ export function useFetch(url) {
     useEffect(() => {
         setLoading(true)
         fetch(url)
-        .then(response => response.json())
-        .then(data => setData(data))
-        .catch(error => {throw new Error("no se encontraron productos")})
-        .finally(() => setLoading(false))
+            .then(response => response.json())
+            .then(data => setData(data))
+            .catch(error => {throw new Error("no se encontraron productos")})
+            .finally(() => setLoading(false))
     }, [])
 
     return({ data, loading })

@@ -12,9 +12,7 @@ function App() {
   return (
     <BrowserRouter>
       <CartProvider>
-        <header>
           <NavBar />
-        </header>
         <Routes>
           <Route path="/" element={ <Home /> }/>
           <Route path="/collection/:collectionId" element={ <Store />} />

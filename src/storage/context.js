@@ -13,36 +13,61 @@ function CartProvider(props) {
         localStorage.setItem("productosCarrito", JSON.stringify(cart))
     }, [cart])
 
-    function addToCart(item) {
-        let index = cart.findIndex((itemInCart) => itemInCart.id === item.id)
-        let newCart = cart.map((item) => item)
-        console.log(item)
-
-        if (index !== -1) {
-            console.log("producto agregado al carrito")
-        } else {
-            newCart.push(item)
-            setCart(newCart)
-        }
+    function getItemQuantity(id) {
+        return cart.find(item => item.id === id)?.quantity || 0
     }
 
-    // function actualizarCantidad(producto) {
-    //     let item = cart.filter(item => item.id == producto.id)
-    //     return item.cantidad
-    // }
-
-    function removeItem(producto) {
-        const results = cart.filter(item => item.id !== producto.id)
-        setCart(results)
+    function increaseCartQuantity(id) {
+        setCart(currentItems => {
+            if (currentItems.find(items => items.id === id) == null) {
+                return [...currentItems, { id, quantity: 1 }]
+            } else {
+                return currentItems.map(item => {
+                    if (item.id === id) {
+                        return { ...item, quantity: item.quantity + 1 }
+                    } else {
+                        return item
+                    }
+                })
+            }
+        })
     }
 
-    function getTotalPriceInCart() {
-        const total = cart.reduce ((acc,el) => acc + el.precio * el.cantidad, 0)
-        return total
+    function decreaseCartQuantity(id) {
+        setCart(currentItems => {
+            if (currentItems.find(item => item.id === id)?.quantity === 1) {
+                return currentItems.filter(item => item.id !== id)
+            } else {
+                return currentItems.map(item => {
+                    if (item.id === id) {
+                        return { ...item, quantity: item.quantity - 1 }
+                    } else {
+                        return item
+                    }
+                })
+            }
+        })
     }
+
+    function removeFromCart(id) {
+        setCart(currentItems => {
+            return currentItems.filter(item => item.id !== id)
+        })
+    }
+
+    const cartQuantity = cart.reduce((quantity, item) => item.quantity + quantity, 0)
 
     return (
-        <cartContext.Provider value={{cart, addToCart, setCart, getTotalPriceInCart, removeItem}}>
+        <cartContext.Provider 
+            value={{
+                cart, 
+                setCart, 
+                increaseCartQuantity,
+                decreaseCartQuantity,
+                removeFromCart, 
+                getItemQuantity,
+                cartQuantity
+                }}>
             {props.children}
         </cartContext.Provider>
     )

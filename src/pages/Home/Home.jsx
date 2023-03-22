@@ -1,10 +1,8 @@
-import { useFetch } from '../../functions/useFetch';
 import ItemList from '../../componentes/ItemList/ItemList';
-import ProductDetail from '../ProductDetail/ProductDetail';
+import ProductDetail  from '../ProductDetail/ProductDetail';
+import storeItems from "../../database/products.json"
 
 function Home() {
-    const { data, loading } = useFetch("../../productos.json")
-
     return (
         <main>
             <div className='row'>
@@ -14,7 +12,7 @@ function Home() {
                 <div className='text-center py-5'>
                     <h1>Featured.</h1>
                 </div>
-                {data && <ProductDetail producto={data[0]} />}
+                {storeItems && <ProductDetail producto={storeItems[0]} />}
             </section>
             <section>
                 <div className='text-center pt-5'>

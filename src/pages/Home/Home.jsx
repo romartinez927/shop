@@ -6,17 +6,17 @@ function Home() {
     return (
         <main>
             <div className='row'>
-                <img src="./hands.png" alt="hands" />
+                <img src="./inicio.png" alt="inicio" />
             </div>
             <section>
                 <div className='text-center py-5'>
-                    <h1>Featured.</h1>
+                    <h2 className='fw-bold'>Featured.</h2>
                 </div>
-                {storeItems && <ProductDetail producto={storeItems[0]} />}
+                {storeItems && <ProductDetail producto={storeItems[8]} />}
             </section>
             <section>
                 <div className='text-center pt-5'>
-                    <h1>All collections.</h1>
+                    <h2 className='fw-bold'>All collections.</h2>
                     <p>summer memories and warm nostalgia</p>
                 </div>
                 <ItemList collection="nostalgia" nombre="summer nostalgia" />

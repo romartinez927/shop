@@ -1,0 +1,14 @@
+.nav-brand {
+    color: #000;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.nav-item {
+    color: #000;
+    text-decoration: none;
+}
+
+.nav-item:hover {
+    text-decoration: underline;
+}

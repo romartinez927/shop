@@ -41,10 +41,10 @@ function Store() {
         <div>
             <div className="bg-light d-flex justify-content-around py-4 align-items-center">
                 <div>
-                    <h1>{colleccion} Collection</h1>
+                    <h1 className="fw-bold">{colleccion} Collection</h1>
                 </div>
                 <div>
-                    <img className="item-collection-img" alt="florecitas" src="../hanekawa.png"/>
+                    <img className="item-collection-img" alt="store-img" src="../hands.png"/>
                 </div>
             </div>
             <div className="d-flex gap-3 align-items-center justify-content-center py-4">
@@ -87,10 +87,10 @@ function Store() {
                     data && data.filter(producto => producto.collection === collectionId).map((producto) => {
                         return (
                             <div key={producto.id} id={producto.id}>
-                                <Link to={`../products/${producto.id}`} className='d-flex flex-column card card-collection'>
-                                    <img src={`.${producto.img}`} alt={producto.nombre}/>
-                                    <h5>{producto.nombre}</h5>
-                                    <p>${producto.precio}</p>
+                                <Link to={`../products/${producto.id}`} className='d-flex flex-column card-collection item-list-card'>
+                                    <img className="item-list-img" src={`.${producto.img}`} alt={producto.nombre}/>
+                                    <h5 className='px-3 pt-2'>{producto.nombre}</h5>
+                                    <p className='px-3'>${producto.precio}</p>
                                 </Link>
                             </div>
                         )

@@ -5,6 +5,7 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import {Link} from "react-router-dom" 
 import { cartContext } from '../../storage/context';
 import { useContext } from 'react';
+import "./NavBar.css"
 
 function NavBar() {
   const {cartQuantity} = useContext(cartContext)
@@ -14,8 +15,8 @@ function NavBar() {
       <Navbar key="lg" expand="lg" className="border">
         <Container fluid>
           <Navbar.Brand>
-            <Link to="/">
-              Navbar
+            <Link className="nav-brand" to="/">
+              Shop.
             </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`} />
@@ -31,32 +32,32 @@ function NavBar() {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-end flex-grow-1 pe-3 gap-3">
-                <Link to="/collection/all">
+                <Link className="nav-item" to="/collection/all">
                   all products.
                 </Link>
-                <Link to="/collection/basic">
+                <Link className="nav-item" to="/collection/basic">
                   basic collection.
                 </Link>
-                <Link to="/collection/summer">
+                <Link className="nav-item" to="/collection/summer">
                   summer vibes collection.
                 </Link>
-                <Link to="/collection/nostalgia">
+                <Link className="nav-item" to="/collection/nostalgia">
                   summer nostalgia collection.
                 </Link>
-                <Link to="/">
+              </Nav>
+            </Offcanvas.Body>
+          </Navbar.Offcanvas>
+          <Link className="nav-item" to="/">
                   <span className="material-icons material-symbols-outlined">
                     search
                   </span>
                 </Link>
-                <Link to="/cart">
+                <Link className="nav-item" to="/cart">
                   <span className="material-icons material-symbols-outlined">
                     shopping_bag
                   </span>
                   <span className="badge bg-primary">{cartQuantity}</span>
                 </Link>
-              </Nav>
-            </Offcanvas.Body>
-          </Navbar.Offcanvas>
         </Container>
       </Navbar>
     </header>

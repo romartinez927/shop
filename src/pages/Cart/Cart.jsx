@@ -19,7 +19,7 @@ function Cart() {
     return (
         <>
             <div className='d-flex align-items-center justify-content-between px-5 pt-5'>
-                <h1>Your Cart</h1>
+                <h2 className='fw-bold'>Your Cart</h2>
                 <Link to="/collection/all">
                     <p>Continue shopping</p>
                 </Link>
@@ -45,7 +45,7 @@ function Cart() {
                     const item = storeItems.find(i => i.id === cartItem.id)
                     return total + (item?.precio || 0) * cartItem.quantity
                 }, 0)}</p>
-                <button>Check out</button>
+                <Link to="/checkout">Check out</Link>
             </div>
         </>
     )

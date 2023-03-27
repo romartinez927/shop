@@ -15,17 +15,13 @@ function CartItem({ id, quantity }) {
                     <h5 className="tarjetita-nombre">{item.nombre}</h5>
                     <p className="tarjetita-text price">${item.precio}</p>
                 </div>
-                <div className='d-flex gap-2'>
-                    <button className="btn-light" onClick={() => decreaseCartQuantity(id)}>-</button>
-                    <p>{quantity}</p>
-                    <button className="btn-light" onClick={() => increaseCartQuantity(id)}>+</button>
+                <div className='d-flex align-items-center justify-content-center gap-4 quantity-container mb-3'>
+                    <button className="quantity-btn fs-4" onClick={() => decreaseCartQuantity(id)}>-</button>
+                    <span>{quantity}</span>
+                    <button className="quantity-btn fs-4" onClick={() => increaseCartQuantity(id)}>+</button>
                 </div>
-                <div>
-                    <button onClick={() => removeFromCart(id)}>X</button>
-                </div>
-                <div>
-                    <p>${item.precio * quantity}</p>
-                </div>
+                <button onClick={() => removeFromCart(id)}>X</button>
+                <p>${item.precio * quantity}</p>
             </div>
         </div>
     )

@@ -3,5 +3,15 @@
 }
 
 .item-collection-img {
-    max-width: 30em;
+    object-fit: cover;
+    width: 30em;
+    height: 12em;
+}
+
+.filters-store {
+    border: 1px solid #fff;
+}
+
+.filters-store:hover {
+    text-decoration: underline;
 }

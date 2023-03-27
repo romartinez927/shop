@@ -10,6 +10,17 @@
     border: 0.1rem solid black;
 }
 
+.add-cart-btn {
+    border: 1px solid #000;
+    transition: all .2s ease;
+    background-color: #fff;
+}
+
+.add-cart-btn:hover {
+    background-color: #000;
+    color: #fff;
+}
+
 .quantity-container {
     padding: .2em 1em;
     max-width: 8em;
@@ -19,4 +30,17 @@
 .quantity-btn {
     all: unset;
     cursor: pointer;
+}
+
+.remove-btn {
+    border: 1px solid lightcoral;
+    transition: all .2s ease;
+    color: lightcoral;
+    width: 100%;
+    background-color: #fff;
+}
+
+.remove-btn:hover {
+    background-color: lightcoral;
+    color: #fff
 }

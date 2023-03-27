@@ -24,10 +24,10 @@ function Cart() {
                     <p>Continue shopping</p>
                 </Link>
             </div>
-            <div className='d-flex justify-content-between px-5 pt-4 border-bottom'>
-                <p>Product</p>
-                <p>Quantity</p>
-                <p>Total</p>
+            <div className='row px-5 pt-4 border-bottom mx-5'>
+                <p className='col-7'>Product</p>
+                <p className='col-3 px-5'>Quantity</p>
+                <p className='col-2 text-end'>Total</p>
             </div>
             {cart.length > 0 ? (cart.map((item) => (
                 <CartItem key={item.id} {...item} />

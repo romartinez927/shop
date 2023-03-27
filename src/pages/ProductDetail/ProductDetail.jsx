@@ -20,7 +20,7 @@ export default function ProductDetail({producto}) {
             <h2 className="fw-bold">{producto.nombre}</h2>
             <p>${producto.precio}</p>
             <div>
-              <p>Size</p>
+              <p className="mb-1">Size</p>
               <div className="d-flex gap-2">
                 <button className="detail-btn">S</button>
                 <button className="detail-btn">M</button>
@@ -30,16 +30,16 @@ export default function ProductDetail({producto}) {
               </div>
             </div>
             { quantity === 0 ? (
-              <button className="btn-light" onClick={() => increaseCartQuantity(producto.id)}>Add to Cart</button>
+              <button className="add-cart-btn mt-4 mb-1 py-2" onClick={() => increaseCartQuantity(producto.id)}>Add to Cart</button>
             ) :
               <div>
-                <p>Quantity</p>
-                <div className="d-flex align-items-center justify-content-center gap-4 quantity-container mb-3">
+                <p className="pt-3 mb-1">Quantity</p>
+                <div className="d-flex align-items-center justify-content-center gap-4 quantity-container mb-3 mt-0">
                   <button className="quantity-btn fs-4" onClick={() => decreaseCartQuantity(producto.id)}>-</button>
                   <span>{quantity}</span>
                   <button className="quantity-btn fs-4" onClick={() => increaseCartQuantity(producto.id)}>+</button>
                 </div>
-                <button className="btn btn-danger" onClick={() => removeFromCart(producto.id)}>Remove from Cart</button>
+                <button className="remove-btn py-2" onClick={() => removeFromCart(producto.id)}>Remove from Cart</button>
               </div>
 
               }

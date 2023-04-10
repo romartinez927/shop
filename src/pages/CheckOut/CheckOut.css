@@ -1,0 +1,14 @@
+.checkout-container {
+    padding-inline: 6em;
+    padding-block: 3em
+}
+
+.checkout-checkbox {
+    font-size: .8em;
+    align-self: start;
+}
+
+.checkout-btn {
+    font-size: .8em;
+    padding: 1.3em !important;
+}

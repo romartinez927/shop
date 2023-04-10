@@ -23,7 +23,7 @@ export default function ProductDetail({producto}) {
               <p className="mb-1">Size</p>
               <div className="d-flex gap-2">
                 <button className="detail-btn">S</button>
-                <button className="detail-btn">M</button>
+                <button className="detail-btn active">M</button>
                 <button className="detail-btn">L</button>
                 <button className="detail-btn">XL</button>
                 <button className="detail-btn">2XL</button>

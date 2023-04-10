@@ -10,6 +10,11 @@
     border: 0.1rem solid black;
 }
 
+.active {
+    background-color: #000;
+    color: #fff
+}
+
 .add-cart-btn {
     border: 1px solid #000;
     transition: all .2s ease;

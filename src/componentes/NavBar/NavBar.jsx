@@ -53,9 +53,7 @@ function NavBar() {
                   </span>
                 </Link>
                 <Link className="nav-item" to="/cart">
-                  <span className="material-icons material-symbols-outlined">
-                    shopping_bag
-                  </span>
+                  <i className="fa-solid fa-cart-shopping fs-5"></i>
                   <span className="badge bg-primary">{cartQuantity}</span>
                 </Link>
         </Container>

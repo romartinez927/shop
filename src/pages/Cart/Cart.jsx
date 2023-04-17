@@ -45,7 +45,7 @@ function Cart() {
                     const item = storeItems.find(i => i.id === cartItem.id)
                     return total + (item?.precio || 0) * cartItem.quantity
                 }, 0)}</p>
-                <Link to="/checkout">Check out</Link>
+                <Link to="/checkout" className='item-list-btn text-light'>Check out</Link>
             </div>
         </>
     )
